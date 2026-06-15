@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Camisa Gen 2027</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section id="pantallaAuth" class="auth-screen">
+    <div class="auth-container">
+
+      <div class="auth-brand">
+        <span class="badge">CAMISA· GEN 2027</span>
+        <h1>Propuestas para la camisa de la Gen</h1>
+        <p>Inicia sesión para crear tus propuestas de camisa para el próximo año. ¡Tu opinión nos importa!... casi</p>
+      </div>
+
+      <div class="auth-card-app">
+
+        <div class="auth-tabs">
+          <button id="tabLogin" class="tab-btn activo">Iniciar sesión</button>
+          <button id="tabRegistro" class="tab-btn">Crear cuenta</button>
+        </div>
+
+        <div id="formLogin" class="auth-form">
+          <h2>Bienvenido de nuevo lol</h2>
+          <p>Accede a tu cuenta para continuar diseñando.</p>
+
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" placeholder="Ej: invincible@test.com">
+
+          <label for="loginClave">Contraseña</label>
+          <input type="password" id="loginClave" placeholder="Tu contraseña">
+
+          <button id="btnLogin">Iniciar sesión</button>
+        </div>
+
+        <div id="formRegistro" class="auth-form oculto">
+          <h2>Crea tu cuenta</h2>
+          <p>Regístrate para participar en la votación de diseños.</p>
+
+          <label for="registroNombre">Nombre</label>
+          <input type="text" id="registroNombre" placeholder="Ej: Invincible">
+
+          <label for="registroEmail">Email</label>
+          <input type="email" id="registroEmail" placeholder="Ej: invincible@test.com">
+
+          <label for="registroClave">Contraseña</label>
+          <input type="password" id="registroClave" placeholder="Mínimo 4 caracteres">
+
+          <button id="btnRegistro">Crear cuenta</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="pantallaApp" class="app-screen oculto">
+
+    <header class="hero">
+      <div>
+        <span class="badge">CAMISA · GEN 2027</span>
+        <h1>Propuestas para la camisa de la Gen 2027</h1>
+        <p>Crea, guarda, edita y vota por la línea gráfica de la próxima camisa.</p>
+      </div>
+    </header>
+
+    <main class="contenedor">
+
+      <section class="profile-card card">
+        <div class="profile-info">
+          <div class="avatar" id="avatarUsuario">K</div>
+
+          <div>
+            <h2>Mi perfil</h2>
+            <p id="perfilNombre">Usuario</p>
+            <span id="perfilEmail">correo@test.com</span>
+          </div>
+        </div>
+
+        <div class="profile-actions">
+          <button id="btnCambiarCuenta" class="btn-secondary">Cambiar cuenta</button>
+          <button id="btnLogout" class="btn-delete">Cerrar sesión</button>
+        </div>
+      </section>
+
+      <section class="panel card">
+        <div class="section-title">
+          <h2>Diseña tu camiseta</h2>
+          <p>Selecciona una parte de la camisa y cambia su color.</p>
+        </div>
+
+        <div class="formulario">
+          <input type="hidden" id="camisetaId">
+
+          <label for="nombreDiseno">Nombre del diseño</label>
+          <input type="text" id="nombreDiseno" placeholder="Ej: Earthy Gen 2027">
+
+          <label for="descripcion">Descripción</label>
+          <textarea id="descripcion" placeholder="Ej: Diseño inspirado en una paleta elegante y natural."></textarea>
+
+          <label for="colorPicker">Color seleccionado</label>
+          <input type="color" id="colorPicker" value="#ffffff">
+
+          <p id="parteActual">Selecciona una parte de la camisa</p>
+
+          <button id="btnGuardar">Guardar diseño</button>
+          <button id="btnActualizar" class="btn-edit oculto">Actualizar diseño</button>
+          <button id="btnCancelar" class="btn-cancel oculto">Cancelar edición</button>
+          <button id="btnLimpiar" class="btn-secondary">Reiniciar colores</button>
+        </div>
+      </section>
+
+      <section class="camiseta-preview card">
+        <svg id="camisetaSvg" viewBox="0 0 300 360">
+
+          <path 
+            id="mangaIzquierda"
+            class="parte-camiseta"
+            d="M95 80 L35 115 L65 175 L110 150 Z"
+            fill="#ffffff"
+            stroke="#111827"
+            stroke-width="3"
+          />
+
+          <path 
+            id="mangaDerecha"
+            class="parte-camiseta"
+            d="M205 80 L265 115 L235 175 L190 150 Z"
+            fill="#ffffff"
+            stroke="#111827"
+            stroke-width="3"
+          />
+
+          <path 
+            id="torso"
+            class="parte-camiseta"
+            d="M95 80 Q150 120 205 80 L220 310 L80 310 Z"
+            fill="#ffffff"
+            stroke="#111827"
+            stroke-width="3"
+          />
+
+          <path 
+            id="cuello"
+            class="parte-camiseta"
+            d="M120 78 Q150 115 180 78 Q150 95 120 78"
+            fill="#ffffff"
+            stroke="#111827"
+            stroke-width="3"
+          />
+
+          <text 
+            x="150" 
+            y="205" 
+            text-anchor="middle" 
+            font-size="24" 
+            fill="#111827" 
+            font-weight="bold">
+            GEN 2027
+          </text>
+
+        </svg>
+      </section>
+
+      <section class="lista-disenos card">
+        <div class="section-title">
+          <h2>Diseños guardados</h2>
+          <p>Administra los diseños registrados en MongoDB.</p>
+        </div>
+
+        <div id="contenedorCamisetas"></div>
+      </section>
+
+    </main>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

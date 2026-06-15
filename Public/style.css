@@ -1,0 +1,463 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --stark: #e4e1b9;
+  --coral: #c7c3a9;
+  --olive: #a7a08b;
+  --bandicoot: #7a7a6c;
+  --abbey: #4b4b4e;
+  --dark: #111827;
+  --white: #ffffff;
+  --soft: #eeece3;
+  --border: #ded9c9;
+  --red: #dc2626;
+  --green: #16a34a;
+  --orange: #f59e0b;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(228, 225, 185, 0.75), transparent 28%),
+    linear-gradient(135deg, #f8f7f1, #eeece3);
+  color: var(--dark);
+  min-height: 100vh;
+}
+
+.oculto {
+  display: none !important;
+}
+
+/* ========================= */
+/* AUTH SCREEN */
+/* ========================= */
+
+.auth-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 20px;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 1050px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.auth-brand {
+  background: linear-gradient(135deg, var(--dark), var(--abbey));
+  color: white;
+  border-radius: 32px;
+  padding: 48px;
+  min-height: 470px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 25px 55px rgba(17, 24, 39, 0.18);
+}
+
+.badge {
+  display: inline-block;
+  width: fit-content;
+  background: rgba(228, 225, 185, 0.12);
+  color: var(--stark);
+  border: 1px solid rgba(228, 225, 185, 0.35);
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.auth-brand h1 {
+  font-size: clamp(36px, 5vw, 62px);
+  line-height: 1;
+  letter-spacing: -2px;
+  margin-bottom: 18px;
+}
+
+.auth-brand p {
+  color: #e5e7eb;
+  font-size: 17px;
+  max-width: 520px;
+}
+
+.auth-card-app {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 26px;
+  box-shadow: 0 25px 55px rgba(17, 24, 39, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.auth-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--soft);
+  padding: 6px;
+  border-radius: 18px;
+  margin-bottom: 22px;
+}
+
+.tab-btn {
+  background: transparent;
+  color: var(--abbey);
+  border-radius: 14px;
+}
+
+.tab-btn.activo {
+  background: var(--dark);
+  color: white;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth-form h2 {
+  font-size: 26px;
+}
+
+.auth-form p {
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+/* ========================= */
+/* APP SCREEN */
+/* ========================= */
+
+.hero {
+  background: linear-gradient(135deg, var(--dark), var(--abbey));
+  color: var(--white);
+  padding: 38px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 4vw, 46px);
+  margin-bottom: 10px;
+  letter-spacing: -1px;
+}
+
+.hero p {
+  color: #e5e7eb;
+  font-size: 15px;
+}
+
+.contenedor {
+  width: 90%;
+  max-width: 1180px;
+  margin: 32px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(222, 217, 201, 0.95);
+  border-radius: 24px;
+  padding: 26px;
+  box-shadow: 0 20px 45px rgba(17, 24, 39, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.profile-card {
+  grid-column: 1 / 3;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+
+.profile-info {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--dark), var(--abbey));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.profile-info h2 {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.profile-info p {
+  font-weight: bold;
+  color: var(--dark);
+}
+
+.profile-info span {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.profile-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.section-title {
+  margin-bottom: 18px;
+}
+
+.section-title h2 {
+  font-size: 23px;
+  margin-bottom: 5px;
+}
+
+.section-title p {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 13px;
+  color: var(--abbey);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fffdf7;
+  outline: none;
+  transition: 0.2s;
+  color: var(--dark);
+}
+
+textarea {
+  min-height: 78px;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--bandicoot);
+  box-shadow: 0 0 0 4px rgba(122, 122, 108, 0.12);
+}
+
+input[type="color"] {
+  width: 62px;
+  height: 46px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+#parteActual {
+  padding: 12px 14px;
+  background: var(--soft);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  color: var(--abbey);
+  font-size: 14px;
+}
+
+button {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 14px;
+  background: var(--dark);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.btn-secondary {
+  background: var(--abbey);
+}
+
+.btn-edit {
+  background: var(--green);
+}
+
+.btn-cancel {
+  background: var(--orange);
+}
+
+.btn-delete {
+  background: var(--red);
+}
+
+.camiseta-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 460px;
+}
+
+#camisetaSvg {
+  width: 100%;
+  max-width: 390px;
+  filter: drop-shadow(0 18px 22px rgba(17, 24, 39, 0.16));
+}
+
+.parte-camiseta {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.parte-camiseta:hover {
+  opacity: 0.88;
+  stroke-width: 5;
+}
+
+.parte-activa {
+  stroke: #000000;
+  stroke-width: 6;
+}
+
+.lista-disenos {
+  grid-column: 1 / 3;
+}
+
+.tarjeta-camiseta {
+  background: #fffdf8;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.tarjeta-camiseta h3 {
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.tarjeta-camiseta p {
+  margin-bottom: 5px;
+  color: #374151;
+}
+
+.descripcion-card {
+  color: #6b7280;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.mini-camisa {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.color-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid rgba(17, 24, 39, 0.25);
+}
+
+.acciones-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.estrellas {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.estrellas button {
+  background: var(--orange);
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.acciones-crud {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.acciones-crud button {
+  padding: 9px 12px;
+  font-size: 12px;
+}
+
+.mensaje-vacio {
+  padding: 18px;
+  background: var(--soft);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  color: var(--abbey);
+}
+
+@media (max-width: 850px) {
+  .auth-container,
+  .contenedor {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-brand {
+    min-height: auto;
+    padding: 34px;
+  }
+
+  .auth-brand h1 {
+    font-size: 38px;
+  }
+
+  .profile-card,
+  .lista-disenos {
+    grid-column: 1;
+  }
+
+  .profile-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .tarjeta-camiseta {
+    grid-template-columns: 1fr;
+  }
+}
