@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const uri = 'mongodb+srv://mcedes:Clavecita2026@cluster0.zisfazb.mongodb.net/camisApp';
+const uri = 'mongodb+srv://mcedes:2022015@cluster0.zisfazb.mongodb.net/camisApp';
 
 async function conectarBD() {
     try {
